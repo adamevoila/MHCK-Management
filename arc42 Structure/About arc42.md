@@ -1,3 +1,13 @@
+---
+layout: post
+title:  "About arc42"
+date:   2023-11-03 14:14:29 +0100
+categories: jekyll update
+---
+
+
+
+
 # About arc42
  
 arc42, the Template for documentation of software and system
