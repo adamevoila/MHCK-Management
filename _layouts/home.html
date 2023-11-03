@@ -68,6 +68,12 @@ layout: base
           window.location.href = "/404/";
         }
       });
+      
+      // Führen Sie eine zusätzliche Überprüfung durch, falls das Widget bereits initialisiert wurde
+      // bevor das Event ausgelöst wurde.
+      if (!window.netlifyIdentity.currentUser()) {
+        window.location.href = "/404/";
+      }
     } else {
       console.log("Netlify Identity Widget not loaded");
     }
