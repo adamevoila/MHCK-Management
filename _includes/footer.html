@@ -31,7 +31,26 @@
     <div class="social-links">
       {%- include social.html -%}
     </div>
-    <div data-netlify-identity-button>_Login with Netlify Identity</div>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', user => {
+        if (!user) {
+          window.location.href = "/404/";
+        }
+      });
+      
+      // Führen Sie eine zusätzliche Überprüfung durch, falls das Widget bereits initialisiert wurde
+      // bevor das Event ausgelöst wurde.
+      if (!window.netlifyIdentity.currentUser()) {
+        window.location.href = "/404/";
+      }
+    } else {
+      console.log("Netlify Identity Widget not loaded");
+    }
+  });
+</script>
   </div>
 
 </footer>
